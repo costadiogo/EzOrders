@@ -18,7 +18,7 @@ const io = socketIo(server);
 
 app.use((request, response, next) => {
   request.io = io;
-  next();
+  return next();
 });
 app.use(express.json());
 app.use(routes);
